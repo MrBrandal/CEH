@@ -1,0 +1,11 @@
+media.zoom.us
+1-to-all.zoom.us
+degrees-org.zoom.us
+100women-org.zoom.us
+0data.zoom.us
+10east.zoom.us
+10pearls.zoom.us
+10thdistrict-org.zoom.us
+10xgenomics.zoom.us
+همه اینا ساب دومین های این سایت زوم است ک بااستفاده از سایت dnsdumpster
+بدست اورده ام

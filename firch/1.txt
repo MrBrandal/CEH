@@ -1,0 +1,5 @@
+با استفاده از ابزار whois 
+میتوان فهمید که از چه رجیستری برای ثبت دامین ها استفاده شده است که جواب:
+Registry Domain ID: D1813391-US
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL: www.markmonitor.com
