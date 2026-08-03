@@ -1,0 +1,12 @@
+برای بدست اوردن یوزرنیم و پسورد بهترین کار راست کلیک،فالو،تیسیپی استریم و دیدن یوزرنیم و پسورد است که در فایل
+FTP:
+Username: CDTS3500
+Password: cdts3500
+TELNET:
+login:fake
+password:user
+
+HTTP authentication:
+confi:dential
+username:confi
+password:dential
