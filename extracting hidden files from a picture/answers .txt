@@ -1,0 +1,3 @@
+for this project at first I used a hash decoder site which it did'nt work for hashes,then when I tried John tool it did work
+and I found the password which it was ali and when we use that password with steghide for finding the informations about the picture we 
+see a secret.txt file and inside of that file was " maktab_ceh "
