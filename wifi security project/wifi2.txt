@@ -1,0 +1,4 @@
+the security protocol which it was used for this network is WPA, finding the password of this network is definatly harder than the first part 
+and WEP , Although it seem's hard , we go to GITHUB and we use a dictionary for WPA and aircrack-ng
+after this we use aircrack-ng -w password.lst -b 00:0b:86:c2:a4:85 capture2.pcap and IT'S DONE!!
+password = dictionary

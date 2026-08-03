@@ -1,0 +1,10 @@
+first part
+1. name of the access point : WirelessLab
+  Mac addr:Transmitter address:(00:23:cd:1f:73:b0)
+
+2. password = MYKEY
+finding the password of this network was so easy because it use WEP security protocol , the only thing that I have to do is using simple 
+aircrack-ng 
+3.after we found the password and we decode the encryptions we can see that the protocol that were used were 
+arp , udp , ipv4 , ssdp 
+ا 
