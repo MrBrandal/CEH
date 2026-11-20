@@ -1,0 +1,20 @@
+In the name of god
+we are in one of the burpsuit's labs and we're trying to do a brute force 
+attack to a login page
+first we enter a random username and password and then we go to
+http proxy tab in proxy tab and we search in our POST /login and we high light
+what's inside the username and we send it to intruder 
+when we go to intruder tab we can see that we have something like username=§invalid-username§
+which that's the selected part for our payload,On the other hand we copy our 
+username lists and we paste it in the payload part and we have to choose snipe attack and also simple list for our payload
+
+we start the attack and when it's done when we look at the length of columns
+we'll see all the length are 3352 however there's only 1 option that has 
+3354 length and when we look at the responses , It said Invalid password but in others
+we see incorrect usernames,from this we understand that our username is 'app1'
+now when we have our username it's time to go back to our intruder tab and change the username value to 'app1'and 
+then we change the payload position to the password's value,we paste our worldlist and attack like before
+
+Although the last time when attack got finished and 1 had diffrent length,this 
+time status codes have diffrent number and only 1 is diffrent and that's our password and its 'batman'
+when we enter the username and passwords , congratulation Lab is done succesfuly
